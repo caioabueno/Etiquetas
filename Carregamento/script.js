@@ -60,7 +60,8 @@ function renderizar() {
     miniList.appendChild(miniItem);
   });
 
-  totalEl.innerText = total;
+  //usar para totalizador se voltar a utilizar
+  // totalEl.innerText = total;
 
   // --- LÓGICA DE AUTO-RESIZE ---
   ajustarFonte();
