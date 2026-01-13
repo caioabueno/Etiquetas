@@ -1,0 +1,272 @@
+/* --- ESTILOS GERAIS --- */
+body {
+  font-family: sans-serif;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: #f0f0f0;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* PAINEL DE CONTROLE */
+.controls {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  min-width: 320px;
+  flex-shrink: 0;
+  height: fit-content;
+}
+
+.controls h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  flex: 1;
+}
+
+.input-group.large {
+  flex: 2;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button {
+  border: none;
+  padding: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.btn-add {
+  background: #28a745;
+}
+
+.btn-add:hover {
+  background: #218838;
+}
+
+.btn-print {
+  background: #007bff;
+  margin-top: 20px;
+}
+
+.btn-print:hover {
+  background: #0056b3;
+}
+
+.btn-clear {
+  background: #dc3545;
+  margin-top: 5px;
+}
+
+.btn-clear:hover {
+  background: #c82333;
+}
+
+/* LISTA DE PEDIDOS NO PAINEL (Feedback Visual) */
+.mini-list {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.mini-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 5px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.mini-item button {
+  width: auto;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  margin: 0;
+  background: #999;
+}
+
+/* --- PREVIEW E IMPRESSÃO (A4 PAISAGEM) --- */
+.preview-area {
+  flex-grow: 1;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: auto;
+  padding: 20px;
+}
+
+.etiqueta {
+  background: white;
+  width: 29.7cm;
+  height: 21cm;
+  padding: 5mm;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  /* Zoom para caber na tela */
+  transform: scale(0.65);
+  transform-origin: top center;
+}
+
+/* LAYOUT DA ETIQUETA */
+.header {
+  text-align: center;
+  border-bottom: 3px solid #000;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  height: 60px;
+  margin-right: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+/* CONTAINER DA LISTA (Onde a mágica do resize acontece) */
+.lista-container {
+  flex-grow: 1;
+  /* Ocupa todo o espaço disponível */
+  border: 2px solid #000;
+  padding: 10px;
+  overflow: hidden;
+  /* Esconde se vazar (o JS vai impedir que vaze) */
+  display: flex;
+  flex-direction: column;
+}
+
+/* A TABELA DE PEDIDOS NA ETIQUETA */
+.pedidos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pedidos-table th {
+  text-align: left;
+  border-bottom: 2px solid #000;
+  font-size: 1.5rem;
+}
+
+.pedidos-table td {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 0;
+}
+
+/* Classes de fonte que serão ajustadas pelo JS */
+.row-cliente {
+  font-weight: bold;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.row-vol {
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: right;
+}
+
+/* RODAPÉ TOTALIZADOR */
+.footer {
+  margin-top: 10px;
+  border-top: 3px solid #000;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-box {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.total-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+/* --- IMPRESSÃO --- */
+@media print {
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .controls,
+  .preview-area {
+    display: none;
+  }
+
+  /* Esconde painel e container cinza */
+
+  .preview-area {
+    display: block !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Mostra só o wrapper */
+
+  .etiqueta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    width: 29.7cm;
+    height: 21cm;
+  }
+}
