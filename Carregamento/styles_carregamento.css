@@ -136,6 +136,7 @@ button {
   width: 29.7cm;
   height: 21cm;
   padding: 5mm;
+  padding-top: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -150,11 +151,11 @@ button {
 .header {
   text-align: center;
   border-bottom: 3px solid #000;
-  padding-bottom: 10px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 3px;
 }
 
 .header img {
@@ -211,23 +212,25 @@ button {
 }
 
 /* RODAPÉ TOTALIZADOR */
+/* usar caso queira voltar a utilizar totalizador */
+
 .footer {
-  margin-top: 10px;
-  border-top: 3px solid #000;
-  padding-top: 10px;
+  margin-top: 0px;
+  padding-top: 0px;
+  /*border-top: 3px solid #000; 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;*/
 }
 
-.total-box {
+/* .total-box {
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-/* usar caso queira voltar a utilizar totalizador */
-/* .total-number {
+
+.total-number {
   font-size: 2.5rem;
   font-weight: 900;
   margin-left: 10px;
