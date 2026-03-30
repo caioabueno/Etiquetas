@@ -43,6 +43,7 @@ function updateLabel() {
   document.getElementById('outRec').innerText = document.getElementById('inRec').value;
   document.getElementById('outForn').innerText = document.getElementById('inForn').value;
   document.getElementById('outRefItem').innerText = document.getElementById('inRefItem').value;
+  document.getElementById('outLote').innerText = document.getElementById('inLote').value;
   document.getElementById('outConf').innerText = document.getElementById('inConf').value.toUpperCase();
 
   // Ajuste automático de fonte do Produto

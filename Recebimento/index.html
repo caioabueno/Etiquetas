@@ -37,6 +37,11 @@
       <input type="text" id="inRec" placeholder="dd/mm" oninput="updateLabel()">
     </div>
 
+    <div class="input-group">
+      <label>Lote</label>
+      <input type="text" id="inLote" placeholder="Ex: L12345" oninput="updateLabel()">
+    </div>
+
     <!-- teste nova implementação para campo de conferente -->
 
     <div class="input-group">
@@ -88,12 +93,16 @@
         </div>
       </div>
 
-      <div style="display: flex; gap: 10px; margin-top: 5px; margin-bottom: 12px;">
-        <div class="box" style="width: 33%;">
+      <div class="area-recebimento">
+        <div class="box" style="flex: 1;">
           <label>Recebimento</label>
           <div class="valor-medio" id="outRec"></div>
         </div>
-        <div style="flex-grow: 1;"></div>
+        
+        <div class="box" style="flex: 2;">
+          <label>Lote</label>
+          <div class="valor-medio" id="outLote"></div>
+        </div>
       </div>
 
       <div class="footer">
